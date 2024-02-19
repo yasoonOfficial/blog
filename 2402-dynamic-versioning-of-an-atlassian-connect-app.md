@@ -21,14 +21,14 @@ When we started, we were all in on the concept of shipping a SPA, without much s
     "enableLicensing": true,
     "modules": {
         "postInstallPage": {
+            // Static HTML file below!
             "url": "/jira-bundle/v5.9.6/index.html?view=gettingStarted",
             "key": "postInstall",
             "name": {
                 "value": "Getting started"
             }
         }
-		// ... more modules
-	}
+    }
 }
 ```
 
@@ -64,11 +64,11 @@ Our new manifest now looks like this for most modules:
     "modules": {
         "webItems": [ {
 			"key": "teams-share-dialog",
+                        // Backend endpoint instead of static HTML file!
 			"url": "/v2/atlassian-connect/render?view=teams-share-dialog&version=5.9.6&issueId={issue.id}",
 			"location": "jira.issue.tools",
 			"context": "addon"
 		} 
-		// ... more modules
 	}
 }
 ```
