@@ -78,7 +78,7 @@ The most important part is now, that the URL used by the module is not not versi
 ### Dynamic version determination
 In the backend service, we now do a few different things. The most basic logic, when there are no exceptions defined, is rendering a HTML page with the version that was provided as a query parameter. So the happy path is basically the same as before, but introducing the possibility to do more. As Atlassian Connect provides an additional query parameter called jwt for each call, you can now do a simple version determination based on the user, the instance or any other criteria you like. We introduced the following options, by using a simple, single version database table, which is key-value only. As it's a single table, we can do a select with three or four different deployment keys at once, and then have a prioritized order in which they are evaluated. 
 
-**The last part of this is then updating the version entries in the database from your CD pipelines, to automate version releases.**
+➡️🚢 The last part of this is then updating the version entries in the database from your CD pipelines, to automate version releases.
 
 #### 1. User based version
 The first criteria that is being evaluated is the user + instance, which allows you to target certain users with a specific version of the app. We use this mostly internally, to let developers activate specific PR builds in a single PR test system. We have a button in our PRs that says "Activate PR in test system", which will write a database entry for the current reviewer. When opening the PR test Jira instance, all app entrypoints will point to the version from the PR. This allows us to quickly validate & review UI changes without checking out and building the code locally.
