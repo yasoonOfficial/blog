@@ -62,14 +62,14 @@ Our new manifest now looks like this for most modules:
     },
     "enableLicensing": true,
     "modules": {
-        "webItems": [ {
-			"key": "teams-share-dialog",
-                        // Backend endpoint instead of static HTML file!
-			"url": "/v2/atlassian-connect/render?view=teams-share-dialog&version=5.9.6&issueId={issue.id}",
-			"location": "jira.issue.tools",
-			"context": "addon"
-		} 
-	}
+        "webItems": [{
+             "key": "teams-share-dialog",
+             // Backend endpoint instead of static HTML file!
+	     "url": "/v2/atlassian-connect/render?view=teams-share-dialog&version=5.9.6&issueId={issue.id}",
+             "location": "jira.issue.tools",
+             "context": "addon"
+	}]        
+    }
 }
 ```
 
